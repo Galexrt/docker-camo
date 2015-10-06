@@ -1,17 +1,17 @@
 FROM base/archlinux
-MAINTAINER Paolo Galeone <nessuno@nerdz.eu>
+MAINTAINER Alexander Trost <galexrt@googlemail.com>
 
-RUN sed -i -e 's#https://mirrors\.kernel\.org#http://mirror.clibre.uqam.ca#g' /etc/pacman.d/mirrorlist && \
-        pacman -Sy wget ca-certificates git --noconfirm &&  \
-        useradd -m -s /bin/bash camo
+ENV NODEJS_VERSION="4.1.2" \
+    CAMO_DIR="/home/camo" CAMO_KEY="" \
+    PORT="8081"
 
-RUN wget https://nodejs.org/dist/v4.1.2/node-v4.1.2-linux-x64.tar.gz && \
-    gunzip node-v4.1.2-linux-x64.tar.gz && tar -xvf node-v4.1.2-linux-x64.tar
+ADD entrypoint.sh /entrypoint.sh
+RUN pacman -Sy wget ca-certificates git tar --noconfirm &&  \
+    useradd -m -s /bin/bash camo && \
+    wget "https://nodejs.org/dist/v$NODEJS_VERSION/node-v$NODEJS_VERSION-linux-x64.tar.gz" && \
+    tar xvzf "node-v$NODEJS_VERSION-linux-x64.tar.gz"
 
 EXPOSE 8081
+VOLUME ["/home/camo"]
 
-VOLUME /home/camo
-
-COPY startup.sh /opt/
-
-ENTRYPOINT bash /opt/startup.sh
+ENTRYPOINT ["/entrypoint.sh"]

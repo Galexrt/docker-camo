@@ -12,7 +12,7 @@ If you want to pull and run the image you can do it in the classical docker way:
 
 ```sh
 docker pull nerdzeu/docker-camo
-docker run nerdzeu/docker-camo
+docker run -p 8081:8081 nerdzeu/docker-camo
 ```
 
 If you want to build the image:
