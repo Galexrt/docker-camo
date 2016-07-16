@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 camo:
     #build: .
     image: nerdzeu/docker-camo
@@ -5,3 +6,16 @@ camo:
         - "8081:8081"
     volumes:
         - /opt/camo:/home/camo
+=======
+version: '2'
+
+services:
+
+    camo:
+        #build: .
+        image: nerdzeu/docker-camo
+        ports:
+            - "8081:8081"
+        volumes:
+            - ./camo:/home/camo
+>>>>>>> e26a164510e33819934809869866a6f13cab7c8e
