@@ -11,4 +11,6 @@ if [ -f "/home/camo/env" ]; then
     source /home/camo/env
 fi
 
+echo "=> Node version: $(node -v)"
+echo "=> Starting camo as camo user"
 exec su camo -c "node /home/camo/camo/server.js"
