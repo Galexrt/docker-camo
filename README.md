@@ -1,4 +1,4 @@
-# nerdzeu/camo
+# galexrt/docker-camo
 
 This repo is part of the docker enviroment for nerdz (`nerdzeu/docker`).
 
