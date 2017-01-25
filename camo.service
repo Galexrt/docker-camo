@@ -5,7 +5,7 @@ After=docker.service
 [Service]
 Restart=always
 Type=simple
-WorkingDirectory=/home/host-user/camo/
+WorkingDirectory=/home/HOST_USER/camo/
 ExecStart=/usr/local/bin/docker-compose up --no-recreate
 ExecStop=/usr/local/bin/docker-compose stop
 

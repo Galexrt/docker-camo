@@ -11,8 +11,8 @@ Use it as part of nerdzeu/docker.
 If you want to pull and run the image you can do it in the classical docker way:
 
 ```sh
-docker pull nerdzeu/docker-camo
-docker run -p 8081:8081 nerdzeu/docker-camo
+docker pull galexrt/camo
+docker run -p 8081:8081 galexrt/camo
 ```
 
 If you want to build the image:
