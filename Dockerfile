@@ -1,5 +1,5 @@
 FROM galeone/archlinux-updated-aur
-MAINTAINER Alexander Trost <galexrt@googlemail.com>
+LABEL maintainer="Alexander Trost <galexrt@googlemail.com>"
 
 ENV NODEJS_VERSION="4.1.2" \
     CAMO_DIR="/home/camo" CAMO_KEY="" \
